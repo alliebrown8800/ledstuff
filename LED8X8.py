@@ -16,7 +16,6 @@ class LED8x8():
     print('yo yo yo')
     p.daemon = True
     p.start()
-    
 
   def display(self): # display a given pattern (where pattern is a list of bytes)
     while True:
