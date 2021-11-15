@@ -4,6 +4,7 @@ from LED8X8 import LED8x8 # importing LED8x8 class
 dataPin, latchPin, clockPin = 21, 20, 16 # data pins for shift registers
 
 LEDdisplay = LED8x8(dataPin, latchPin, clockPin) # create LED display object from class
+print('all good')
 
 try: # exception handling
   while True:
