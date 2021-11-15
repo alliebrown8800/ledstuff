@@ -3,7 +3,7 @@ import time
 import multiprocessing
 import random
 
-class LED8x8(multiprocessing.Process):
+class LED8x8():
 
   # Initial lightning bug:
   pattern = multiprocessing.Array('i',[0b11111111, 0b11111111, 0b11111111, 0b11111111, 0b11110111, 0b11111111, 0b11111111, 0b11111111])
