@@ -7,8 +7,9 @@ class LED8x8():
     self.shifter = Shifter(data, latch, clock) # initiate with pins
 
   def display(self, pattern): # display a given pattern (where pattern is a list of bytes)
-    for row in range(8): # for each of the 8 rows
-      self.shifter.shiftByte(pattern[row]) # display pattern on that row
-      self.shifter.shiftByte(1 << (row)) # select the given row 
-      self.shifter.latch() # latch the shift registers
-      time.sleep(.001) # sleep for 1 ms
+    while True:
+      for row in range(8): # for each of the 8 rows
+        self.shifter.shiftByte(pattern[row]) # display pattern on that row
+        self.shifter.shiftByte(1 << (row)) # select the given row 
+        self.shifter.latch() # latch the shift registers
+        time.sleep(.001) # sleep for 1 ms

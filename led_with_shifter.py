@@ -10,9 +10,7 @@ pattern = [0b00111100, 0b01000010, 0b10100101, 0b10000001, 0b10100101, 0b1001100
 theLEDdisplay= LED8x8(dataPin, latchPin, clockPin) # create LED display object from class
 
 try: # exception handling
-  while True:
-    theLEDdisplay.display(pattern) # display pattern
-
+  theLEDdisplay.display(pattern) # display pattern
 
 # More exception handling:
 except KeyboardInterrupt: 
