@@ -1,4 +1,5 @@
 import time
+import RPi.GPIO as GPIO # importing GPIO library
 from led_display import LEDdisplay
 
 # Simple demonstration of the LEDdisplay class.
