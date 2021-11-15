@@ -17,7 +17,7 @@ class LED8x8():
     p.start()
     print('yo yo yo')
 
-  def display(self, pattern): # display a given pattern (where pattern is a list of bytes)
+  def display(self): # display a given pattern (where pattern is a list of bytes)
     while True:
       for row in range(8): # for each of the 8 rows
         self.shifter.shiftByte(self.pattern[row]) # display pattern on that row
