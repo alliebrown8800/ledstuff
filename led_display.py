@@ -1,6 +1,5 @@
 # LEDdisplay class
 
-import time
 from shifter import Shifter # extend by composition
 
 class LEDdisplay():
@@ -24,5 +23,5 @@ class LEDdisplay():
     
   def setNumber(self, num): # display a given number
     row = 3 # change this value to pick which row the pattern appears on
-    self.shifter.shiftByte(LEDdisplay.numbers[num]) # load the row values
-    self.shifter.shiftByte(1 << (row-1)) # select the given row
+    self.shifter.shiftByte(LEDdisplay.numbers[num]) # load the row values - display that byte pattern
+    self.shifter.shiftByte(1 << (row-1)) # select the given row - 
