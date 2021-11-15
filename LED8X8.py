@@ -7,7 +7,7 @@ class LED8x8():
     self.shifter = Shifter(data, latch, clock)
 
   def display(self, pattern): # display a given number
-    for row in range(10):
+    for row in range(8):
       self.shifter.shiftByte(pattern[row]) # load the row values - display that byte pattern
       self.shifter.shiftByte(1 << (row)) # select the given row 
       time.sleep(.001)
