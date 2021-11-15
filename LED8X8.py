@@ -12,9 +12,10 @@ class LED8x8():
   
   def __init__(self, data, latch, clock):
     self.shifter = Shifter(data, latch, clock) # initiate with pins
-    p = multiprocessing.Process(target = self.display(self.pattern), args = (self.pattern))
+    p = multiprocessing.Process(target = self.display(), args = (self.pattern))
     p.daemon = True
     p.start()
+    print('yo yo yo')
 
   def display(self, pattern): # display a given pattern (where pattern is a list of bytes)
     while True:
