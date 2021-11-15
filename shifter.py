@@ -6,7 +6,8 @@ class Shifter(object):
 
   'Shift register class'
 
-  def __init__(self, data, latch, clock):
+  def __init__(self, data, latch, clock): 
+    # Initializing:
     self.dataPin, self.latchPin, self.clockPin = data, latch, clock
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(self.dataPin, GPIO.OUT)
@@ -24,5 +25,5 @@ class Shifter(object):
       GPIO.output(self.dataPin, byteVal & (1<<i)) # if common cathode
       self.ping(self.clockPin)
 
-  def latch(self):
+  def latch(self): # separate latching step since we now have two bytes
     self.ping(self.latchPin)

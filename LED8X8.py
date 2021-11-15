@@ -1,14 +1,14 @@
-from shifter import Shifter # extend by composition
+from shifter import Shifter # extend shifter by composition
 import time
 
 class LED8x8():
   
   def __init__(self, data, latch, clock):
-    self.shifter = Shifter(data, latch, clock)
+    self.shifter = Shifter(data, latch, clock) # initiate with pins
 
-  def display(self, pattern): # display a given number
-    for row in range(8):
-      self.shifter.shiftByte(pattern[row]) # load the row values - display that byte pattern
+  def display(self, pattern): # display a given pattern (where pattern is a list of bytes)
+    for row in range(8): # for each of the 8 rows
+      self.shifter.shiftByte(pattern[row]) # display pattern on that row
       self.shifter.shiftByte(1 << (row)) # select the given row 
-      self.shifter.latch()
-      time.sleep(.001)
+      self.shifter.latch() # latch the shift registers
+      time.sleep(.001) # sleep for 1 ms
