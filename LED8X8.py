@@ -8,7 +8,7 @@ class LED8x8():
   
   def __init__(self, data, latch, clock):
     self.shifter = Shifter(data, latch, clock) # initiate with pins
-    self.display(pattern)
+    self.display(LED8x8.pattern)
 
   def display(self, pattern): # display a given pattern (where pattern is a list of bytes)
     while True:
