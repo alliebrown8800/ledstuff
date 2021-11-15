@@ -5,7 +5,7 @@ import multiprocessing
 class LED8x8():
 
   # Initial lightning bug:
-  pattern = multiprocessing.Array('i',[0b00111100, 0b01000010, 0b10100101, 0b10000001, 0b10100101, 0b10011001, 0b01000010, 0b00111100])
+  pattern = multiprocessing.Array('i',[0b11111111, 0b11111111, 0b11111111, 0b11111111, 0b11110111, 0b11111111, 0b11111111, 0b11111111])
   
   def __init__(self, data, latch, clock):
     self.shifter = Shifter(data, latch, clock) # initiate with pins
