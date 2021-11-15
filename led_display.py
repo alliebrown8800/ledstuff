@@ -7,7 +7,7 @@ class LEDdisplay():
   'Class for controlling a 7-segment LED display'
 
   numbers = [
-    0b11111111, # 0
+    0b00000000, # 0
     0b01100000, # 1
     0b11011010, # 2
     0b11110010, # 3
