@@ -8,6 +8,6 @@ class LED8x8():
 
   def display(self, pattern): # display a given number
     for row in range(10):
-      self.shifter.shiftByte(pattern[row-1]) # load the row values - display that byte pattern
-      self.shifter.shiftByte(1 << (row-1)) # select the given row 
+      self.shifter.shiftByte(pattern[row]) # load the row values - display that byte pattern
+      self.shifter.shiftByte(1 << (row)) # select the given row 
       time.sleep(.001)
