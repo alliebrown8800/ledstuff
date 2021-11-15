@@ -53,6 +53,8 @@ class LED8x8():
         LED8x8.pattern[LED8x8.y] = ~LED8x8.pattern[LED8x8.y] & mask
       LED8x8.y = LED8x8.y + y_change
 
+      print(LED8x8.pattern)
+
       time.sleep(.1)
 
 
