@@ -25,6 +25,7 @@ class LED8x8():
         time.sleep(.001) # sleep for 1 ms
   
   def randomwalk(self):
+    print('random')
     while True:
       y_change = random.choice(LED8x8.movement) # change in y direction
       x_change = random.choice(LED8x8.movement) # change in x direction
@@ -52,8 +53,6 @@ class LED8x8():
       else:
         LED8x8.pattern[LED8x8.y] = ~LED8x8.pattern[LED8x8.y] & mask
       LED8x8.y = LED8x8.y + y_change
-
-      print(LED8x8.pattern)
 
       time.sleep(.1)
 
