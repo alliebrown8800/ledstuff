@@ -1,6 +1,5 @@
 import RPi.GPIO as GPIO # importing GPIO library
 from LED8X8 import LED8x8 # importing LED8x8 class
-import multiprocessing
 
 dataPin, latchPin, clockPin = 21, 20, 16 # data pins for shift registers
 
