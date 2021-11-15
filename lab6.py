@@ -5,6 +5,7 @@ dataPin, latchPin, clockPin = 21, 20, 16 # data pins for shift registers
 
 try: # exception handling
   LEDdisplay= LED8x8(dataPin, latchPin, clockPin) # create LED display object from class
+  print('ok')
   while True:
     print('hi')
     LEDdisplay.randomwalk()
