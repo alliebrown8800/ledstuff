@@ -15,6 +15,7 @@ class LED8x8():
     p = multiprocessing.Process(target=self.display(), args = (self.pattern))
     p.daemon = True
     p.start()
+    print('helloo')
 
   def display(self): # display a given pattern (where pattern is a list of bytes)
     while True:
