@@ -7,7 +7,7 @@ class LEDdisplay():
   'Class for controlling a 7-segment LED display'
 
   numbers = [
-    0b11111100, # 0
+    0b11111111, # 0
     0b01100000, # 1
     0b11011010, # 2
     0b11110010, # 3
@@ -22,6 +22,6 @@ class LEDdisplay():
     self.shifter = Shifter(data, latch, clock)
     
   def setNumber(self, num): # display a given number
-    row = 2 # change this value to pick which row the pattern appears on
+    row = 7 # change this value to pick which row the pattern appears on
     self.shifter.shiftByte(LEDdisplay.numbers[num]) # load the row values - display that byte pattern
     self.shifter.shiftByte(1 << (row-1)) # select the given row - 
