@@ -25,35 +25,35 @@ class LED8x8():
         time.sleep(.001) # sleep for 1 ms
   
   def randomwalk(self):
-    y_change = random.choice(LED8x8.movement) # change in y direction
-    x_change = random.choice(LED8x8.movement) # change in x direction
+    while True:
+      y_change = random.choice(LED8x8.movement) # change in y direction
+      x_change = random.choice(LED8x8.movement) # change in x direction
 
-    # In the y plane:
-    if y_change == -1 and LED8x8.y == 0: # if it's on the left, leave it
-      y_change = 0
-    elif y_change == 1 and LED8x8.y == 7: # if it's on the right, leave it
-      y_change = 0
+      if y_change == -1 and LED8x8.y == 0: # if it's on the left, leave it
+        y_change = 0
+      elif y_change == 1 and LED8x8.y == 7: # if it's on the right, leave it
+        y_change = 0
 
-    # In the x plane:
-    mask = 0b11111111
-    LED8x8.pattern[LED8x8.y] = ~LED8x8.pattern[LED8x8.y] & mask
-
-    if LED8x8.pattern[LED8x8.y] == 0b00000001 and x_change == 1: # if it's on the right, leave it
-      x_change = 0
-    if LED8x8.pattern[LED8x8.y] == 0b10000000 and x_change == -1: # if it's on the left, leave it
-      x_change = 0
-
-    if x_change == -1: LED8x8.pattern[LED8x8.y] = LED8x8.pattern[LED8x8.y] << 1
-    if x_change ==  1: LED8x8.pattern[LED8x8.y] = LED8x8.pattern[LED8x8.y] >> 1
-
-    if y_change != 0:
-      LED8x8.pattern[LED8x8.y + y_change] = ~LED8x8.pattern[LED8x8.y] & mask
-      LED8x8.pattern[LED8x8.y] = 0b11111111
-    else:
+      # In the x plane:
+      mask = 0b11111111
       LED8x8.pattern[LED8x8.y] = ~LED8x8.pattern[LED8x8.y] & mask
-    LED8x8.y = LED8x8.y + y_change
 
-    time.sleep(.5)
+      if LED8x8.pattern[LED8x8.y] == 0b00000001 and x_change == 1: # if it's on the right, leave it
+        x_change = 0
+      if LED8x8.pattern[LED8x8.y] == 0b10000000 and x_change == -1: # if it's on the left, leave it
+        x_change = 0
+
+      if x_change == -1: LED8x8.pattern[LED8x8.y] = LED8x8.pattern[LED8x8.y] << 1
+      if x_change ==  1: LED8x8.pattern[LED8x8.y] = LED8x8.pattern[LED8x8.y] >> 1
+
+      if y_change != 0:
+        LED8x8.pattern[LED8x8.y + y_change] = ~LED8x8.pattern[LED8x8.y] & mask
+        LED8x8.pattern[LED8x8.y] = 0b11111111
+      else:
+        LED8x8.pattern[LED8x8.y] = ~LED8x8.pattern[LED8x8.y] & mask
+      LED8x8.y = LED8x8.y + y_change
+
+      time.sleep(.1)
 
 
 
