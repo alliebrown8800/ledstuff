@@ -16,7 +16,7 @@ theLEDdisplay= LED8x8(dataPin, latchPin, clockPin) # create LED display object f
 
 try:
   while True:
-    LED8x8.display(pattern)
+    LED8x8.display()
 
 except KeyboardInterrupt: 
   print('\nExiting')
