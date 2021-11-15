@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO # importing GPIO library
 from LED8X8 import LED8x8
+import time
 
 # Simple demonstration of the LEDdisplay class.
 # Note that we don't need RPi.GPIO here since all the I/O
@@ -17,6 +18,7 @@ theLEDdisplay= LED8x8(dataPin, latchPin, clockPin) # create LED display object f
 try:
   while True:
     theLEDdisplay.display(pattern)
+    time.sleep(.001)
 
 except KeyboardInterrupt: 
   print('\nExiting')
