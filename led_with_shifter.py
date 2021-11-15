@@ -14,7 +14,15 @@ sequence = [8, 7, 6, 5, 4, 3, 2, 1]
 
 theLEDdisplay= LEDdisplay(dataPin, latchPin, clockPin)
 
-while True:
-  for n in range(len(sequence)):
-    theLEDdisplay.setNumber(sequence[n])
-    time.sleep(0.4)
+try:
+  while True:
+    for n in range(len(sequence)):
+      theLEDdisplay.setNumber(sequence[n])
+      time.sleep(0.4)
+
+except KeyboardInterrupt: 
+  print('\nExiting')
+except Exception as e: # catch all other errors
+  print('\n', e)
+
+GPIO.cleanup()
